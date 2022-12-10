@@ -1,0 +1,7 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_VCOMP.vhd,1605732256,vhdl,,,,vcomponents,,,,,,,,
+C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv,1605732256,systemVerilog,,C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,,xpm_cdc_array_single;xpm_cdc_async_rst;xpm_cdc_gray;xpm_cdc_handshake;xpm_cdc_low_latency_handshake;xpm_cdc_pulse;xpm_cdc_single;xpm_cdc_sync_rst,,uvm,../../../../../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic;../../../../../../rtl/myCPU,,,,,
+C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv,1605732258,systemVerilog,,,,asym_bwe_bb;xpm_memory_base;xpm_memory_dpdistram;xpm_memory_dprom;xpm_memory_sdpram;xpm_memory_spram;xpm_memory_sprom;xpm_memory_tdpram,,uvm,../../../../../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic;../../../../../../rtl/myCPU,,,,,

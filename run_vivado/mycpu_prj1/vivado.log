@@ -1,0 +1,682 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sun Dec 11 00:32:15 2022
+# Process ID: 193816
+# Current directory: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent218776 D:\Study\LOONGSON\cpu_project\cpu_design_proj\cpu_design\CPU_CDE\mycpu_verify\run_vivado\mycpu_prj1\mycpu_prj1.xpr
+# Log file: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/vivado.log
+# Journal file: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.xpr
+INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter.
+Current project path is 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1'
+INFO: [Project 1-313] Project file moved from 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1' since last save.
+INFO: [filemgmt 56-1] IPUserFilesDir: Directory not found as 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files'; using path 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files' instead.
+Scanning sources...
+Finished scanning sources
+WARNING: [Project 1-509] GeneratedRun file for 'synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'clk_pll_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'data_ram_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'inst_ram_synth_1' not found
+WARNING: [Project 1-509] GeneratedRun file for 'impl_1' not found
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/soft/Vivado2020.2/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:42 ; elapsed = 00:00:38 . Memory (MB): peak = 1224.988 ; gain = 135.770
+update_compile_order -fileset sources_1
+generate_target all [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'clk_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'clk_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'clk_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Implementation' target for IP 'clk_pll'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'clk_pll'...
+export_ip_user_files -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.xci] -directory D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files -ipstatic_source_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/modelsim} {questa=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/questa} {riviera=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/riviera} {activehdl=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/activehdl}] -force -quiet
+generate_target all [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/data_ram.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'data_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'data_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'data_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'data_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'data_ram'...
+export_ip_user_files -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/data_ram.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/data_ram.xci] -directory D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files -ipstatic_source_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/modelsim} {questa=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/questa} {riviera=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/riviera} {activehdl=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/activehdl}] -force -quiet
+generate_target all [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci]
+INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'inst_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'inst_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'inst_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'inst_ram'...
+INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'inst_ram'...
+generate_target: Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1262.410 ; gain = 1.809
+export_ip_user_files -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci] -directory D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files -ipstatic_source_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/modelsim} {questa=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/questa} {riviera=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/riviera} {activehdl=D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/activehdl}] -force -quiet
+launch_run {clk_pll_synth_1 data_ram_synth_1 inst_ram_synth_1}
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP clk_pll, cache-ID = 2538332621801fd0; cache size = 167.658 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.xci' is already up-to-date
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP data_ram, cache-ID = a3737b3db4938b62; cache size = 167.658 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/data_ram.xci' is already up-to-date
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP inst_ram, cache-ID = 90f4c53741e65c2f; cache size = 167.658 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci' is already up-to-date
+[Sun Dec 11 00:33:53 2022] Launched clk_pll_synth_1, data_ram_synth_1, inst_ram_synth_1...
+Run output will be captured here:
+clk_pll_synth_1: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.runs/clk_pll_synth_1/runme.log
+data_ram_synth_1: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.runs/data_ram_synth_1/runme.log
+inst_ram_synth_1: D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.runs/inst_ram_synth_1/runme.log
+launch_runs: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 1292.312 ; gain = 29.902
+wait_on_run clk_pll_synth_1
+
+[Sun Dec 11 00:33:53 2022] Waiting for clk_pll_synth_1 to finish...
+[Sun Dec 11 00:33:58 2022] Waiting for clk_pll_synth_1 to finish...
+[Sun Dec 11 00:34:03 2022] Waiting for clk_pll_synth_1 to finish...
+
+*** Running vivado
+    with args -log clk_pll.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_pll.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source clk_pll.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP clk_pll, cache-ID = 2538332621801fd0.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:00 2022...
+[Sun Dec 11 00:34:03 2022] clk_pll_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:10 . Memory (MB): peak = 1292.312 ; gain = 0.000
+wait_on_run clk_pll_synth_1
+wait_on_run data_ram_synth_1
+
+[Sun Dec 11 00:34:03 2022] Waiting for clk_pll_synth_1 to finish...
+
+*** Running vivado
+    with args -log clk_pll.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_pll.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source clk_pll.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP clk_pll, cache-ID = 2538332621801fd0.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:00 2022...
+[Sun Dec 11 00:34:03 2022] clk_pll_synth_1 finished
+[Sun Dec 11 00:34:03 2022] Waiting for data_ram_synth_1 to finish...
+[Sun Dec 11 00:34:08 2022] Waiting for data_ram_synth_1 to finish...
+
+*** Running vivado
+    with args -log data_ram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source data_ram.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source data_ram.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP data_ram, cache-ID = a3737b3db4938b62.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:07 2022...
+[Sun Dec 11 00:34:08 2022] data_ram_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1292.312 ; gain = 0.000
+wait_on_run clk_pll_synth_1
+wait_on_run data_ram_synth_1
+wait_on_run inst_ram_synth_1
+
+[Sun Dec 11 00:34:08 2022] Waiting for clk_pll_synth_1 to finish...
+
+*** Running vivado
+    with args -log clk_pll.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clk_pll.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source clk_pll.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP clk_pll, cache-ID = 2538332621801fd0.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:00 2022...
+[Sun Dec 11 00:34:08 2022] clk_pll_synth_1 finished
+[Sun Dec 11 00:34:08 2022] Waiting for data_ram_synth_1 to finish...
+
+*** Running vivado
+    with args -log data_ram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source data_ram.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source data_ram.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP data_ram, cache-ID = a3737b3db4938b62.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:07 2022...
+[Sun Dec 11 00:34:08 2022] data_ram_synth_1 finished
+[Sun Dec 11 00:34:08 2022] Waiting for inst_ram_synth_1 to finish...
+[Sun Dec 11 00:34:13 2022] Waiting for inst_ram_synth_1 to finish...
+[Sun Dec 11 00:34:18 2022] Waiting for inst_ram_synth_1 to finish...
+
+*** Running vivado
+    with args -log inst_ram.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source inst_ram.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source inst_ram.tcl -notrace
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP inst_ram, cache-ID = 90f4c53741e65c2f.
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:34:18 2022...
+[Sun Dec 11 00:34:18 2022] inst_ram_synth_1 finished
+wait_on_run: Time (s): cpu = 00:00:01 ; elapsed = 00:00:10 . Memory (MB): peak = 1292.312 ; gain = 0.000
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_top' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.mif'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [SIM-utils-43] Exported 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/inst_ram.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L uvm -prj tb_top_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" into library xpm
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_handshake
+INFO: [VRFC 10-311] analyzing module xpm_cdc_pulse
+INFO: [VRFC 10-311] analyzing module xpm_cdc_array_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_async_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_low_latency_handshake
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" into library xpm
+INFO: [VRFC 10-311] analyzing module xpm_memory_base
+INFO: [VRFC 10-311] analyzing module asym_bwe_bb
+INFO: [VRFC 10-311] analyzing module xpm_memory_dpdistram
+INFO: [VRFC 10-311] analyzing module xpm_memory_dprom
+INFO: [VRFC 10-311] analyzing module xpm_memory_sdpram
+INFO: [VRFC 10-311] analyzing module xpm_memory_spram
+INFO: [VRFC 10-311] analyzing module xpm_memory_sprom
+INFO: [VRFC 10-311] analyzing module xpm_memory_tdpram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic/simulation/blk_mem_gen_v8_4.v" into library blk_mem_gen_v8_4_4
+INFO: [VRFC 10-311] analyzing module STATE_LOGIC_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_muxf7_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_clr_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_pre_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_ce_clr_v8_4
+INFO: [VRFC 10-311] analyzing module write_netlist_v8_4
+INFO: [VRFC 10-311] analyzing module read_netlist_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_write_wrapper_beh_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_read_wrapper_beh_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_regs_fwd_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_output_stage
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_softecc_output_reg_stage
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_mem_module
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exe_stage
+INFO: [VRFC 10-2458] undeclared symbol fs_to_ds_ex, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:75]
+INFO: [VRFC 10-2458] undeclared symbol overflow_inst, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:76]
+INFO: [VRFC 10-2458] undeclared symbol overflow, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:176]
+WARNING: [VRFC 10-3380] identifier 'lo' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:110]
+WARNING: [VRFC 10-3380] identifier 'hi' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:111]
+WARNING: [VRFC 10-3380] identifier 'div_ready_i' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:147]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id_stage
+INFO: [VRFC 10-2458] undeclared symbol ds_bd, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:60]
+INFO: [VRFC 10-2458] undeclared symbol ds_badvaddr, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:61]
+WARNING: [VRFC 10-2938] 'ds_bd' is already implicitly declared on line 60 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:215]
+WARNING: [VRFC 10-2938] 'ds_badvaddr' is already implicitly declared on line 61 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:216]
+WARNING: [VRFC 10-2292] extra semicolon is not allowed here in this dialect. Use SystemVerilog mode [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:441]
+WARNING: [VRFC 10-3380] identifier 'br_taken' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:88]
+WARNING: [VRFC 10-3380] identifier 'rs_wait' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:90]
+WARNING: [VRFC 10-3380] identifier 'rt_wait' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:91]
+WARNING: [VRFC 10-3380] identifier 'inst_beq' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:93]
+WARNING: [VRFC 10-3380] identifier 'inst_bgez' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:94]
+WARNING: [VRFC 10-3380] identifier 'inst_bgezal' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:95]
+WARNING: [VRFC 10-3380] identifier 'mem_control' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:235]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module if_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_stage
+WARNING: [VRFC 10-2292] extra semicolon is not allowed here in this dialect. Use SystemVerilog mode [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/MEM_stage.v:156]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wb_stage
+INFO: [VRFC 10-2458] undeclared symbol cp0_addr, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:56]
+WARNING: [VRFC 10-2938] 'cp0_addr' is already implicitly declared on line 56 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:101]
+WARNING: [VRFC 10-3380] identifier 'cp0_rdata' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:95]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/CONFREG/confreg.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/cp0_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cp0_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/tools.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_5_32
+INFO: [VRFC 10-311] analyzing module decoder_6_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+"xvhdl --incr --relax -prj tb_top_vhdl.prj"
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1292.312 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim'
+"xelab -wto f15e9bfb5a9b4535b613f06853ed1e9d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xpm -L blk_mem_gen_v8_4_4 -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: C:/soft/Vivado2020.2/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto f15e9bfb5a9b4535b613f06853ed1e9d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xpm -L blk_mem_gen_v8_4_4 -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_top_behav xil_defaultlib.tb_top xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.if_stage
+Compiling module xil_defaultlib.decoder_6_64
+Compiling module xil_defaultlib.decoder_5_32
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.id_stage
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.div
+Compiling module xil_defaultlib.exe_stage
+Compiling module xil_defaultlib.mem_stage
+Compiling module xil_defaultlib.cp0_reg
+Compiling module xil_defaultlib.wb_stage
+Compiling module xil_defaultlib.mycpu_top
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.inst_ram
+Compiling module xil_defaultlib.bridge_1x2
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_output_stage(...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_softecc_outpu...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4_mem_module(C_...
+Compiling module blk_mem_gen_v8_4_4.blk_mem_gen_v8_4_4(C_FAMILY="art...
+Compiling module xil_defaultlib.data_ram
+Compiling module xil_defaultlib.confreg(SIMULATION=1'b1)
+Compiling module xil_defaultlib.soc_lite_top(SIMULATION=1'b1)
+Compiling module xil_defaultlib.tb_top
+WARNING: [XSIM 43-3373] "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/testbench/mycpu_tb.v" Line 124. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_top_behav
+
+****** Webtalk v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/xsim.dir/tb_top_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Sun Dec 11 00:34:40 2022. For additional details about this file, please refer to the WebTalk help file at C:/soft/Vivado2020.2/Vivado/2020.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Sun Dec 11 00:34:40 2022...
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 1292.312 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '15' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_top_behav -key {Behavioral:sim_1:Functional:tb_top} -tclbatch {tb_top.tcl} -view {D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+open_wave_config D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+open_wave_config: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1297.520 ; gain = 0.840
+source tb_top.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# log_wave -r /
+WARNING: [Simtcl 6-197] One or more HDL objects could not be logged because of object type or size limitations.  To see details please rerun the command with -verbose (-v).
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module tb_top.soc_lite.inst_ram.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module tb_top.soc_lite.data_ram.inst.\native_mem_module.blk_mem_gen_v8_4_4_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
+xsim: Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 1365.273 ; gain = 72.961
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_top_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:22 ; elapsed = 00:00:40 . Memory (MB): peak = 1365.273 ; gain = 72.961
+run all
+==============================================================
+Test begin!
+----[  14045 ns] Number 8'd01 Functional Test Point PASS!!!
+        [  22000 ns] Test is running, debug_wb_pc = 0xbfc595e8
+        [  32000 ns] Test is running, debug_wb_pc = 0xbfc5a588
+----[  41495 ns] Number 8'd02 Functional Test Point PASS!!!
+        [  42000 ns] Test is running, debug_wb_pc = 0xbfc95e44
+        [  52000 ns] Test is running, debug_wb_pc = 0xbfc96de4
+        [  62000 ns] Test is running, debug_wb_pc = 0xbfc97d84
+----[  62925 ns] Number 8'd03 Functional Test Point PASS!!!
+        [  72000 ns] Test is running, debug_wb_pc = 0xbfc9cbd8
+        [  82000 ns] Test is running, debug_wb_pc = 0xbfc9db78
+----[  90375 ns] Number 8'd04 Functional Test Point PASS!!!
+        [  92000 ns] Test is running, debug_wb_pc = 0xbfc38e94
+        [ 102000 ns] Test is running, debug_wb_pc = 0xbfc39e34
+        [ 112000 ns] Test is running, debug_wb_pc = 0xbfc3add4
+----[ 117825 ns] Number 8'd05 Functional Test Point PASS!!!
+        [ 122000 ns] Test is running, debug_wb_pc = 0xbfc61de0
+        [ 132000 ns] Test is running, debug_wb_pc = 0xbfc62d80
+        [ 142000 ns] Test is running, debug_wb_pc = 0xbfc63d20
+----[ 145275 ns] Number 8'd06 Functional Test Point PASS!!!
+        [ 152000 ns] Test is running, debug_wb_pc = 0xbfc3c65c
+        [ 162000 ns] Test is running, debug_wb_pc = 0xbfc3d5fc
+        [ 172000 ns] Test is running, debug_wb_pc = 0xbfc3e59c
+----[ 172725 ns] Number 8'd07 Functional Test Point PASS!!!
+        [ 182000 ns] Test is running, debug_wb_pc = 0xbfc7f408
+        [ 192000 ns] Test is running, debug_wb_pc = 0xbfc803a8
+----[ 200175 ns] Number 8'd08 Functional Test Point PASS!!!
+        [ 202000 ns] Test is running, debug_wb_pc = 0xbfc40d54
+        [ 212000 ns] Test is running, debug_wb_pc = 0xbfc41cf4
+        [ 222000 ns] Test is running, debug_wb_pc = 0xbfc42c94
+----[ 227625 ns] Number 8'd09 Functional Test Point PASS!!!
+        [ 232000 ns] Test is running, debug_wb_pc = 0xbfc562c0
+        [ 242000 ns] Test is running, debug_wb_pc = 0xbfc57260
+        [ 252000 ns] Test is running, debug_wb_pc = 0xbfc58200
+----[ 255075 ns] Number 8'd10 Functional Test Point PASS!!!
+        [ 262000 ns] Test is running, debug_wb_pc = 0xbfc64cac
+        [ 272000 ns] Test is running, debug_wb_pc = 0xbfc65c4c
+----[ 276505 ns] Number 8'd11 Functional Test Point PASS!!!
+        [ 282000 ns] Test is running, debug_wb_pc = 0xbfc37380
+        [ 292000 ns] Test is running, debug_wb_pc = 0xbfc38320
+----[ 297935 ns] Number 8'd12 Functional Test Point PASS!!!
+        [ 302000 ns] Test is running, debug_wb_pc = 0xbfc0e9e4
+        [ 312000 ns] Test is running, debug_wb_pc = 0xbfc0f984
+----[ 319365 ns] Number 8'd13 Functional Test Point PASS!!!
+        [ 322000 ns] Test is running, debug_wb_pc = 0xbfc32848
+----[ 330605 ns] Number 8'd14 Functional Test Point PASS!!!
+        [ 332000 ns] Test is running, debug_wb_pc = 0xbfc2dc98
+        [ 342000 ns] Test is running, debug_wb_pc = 0xbfc2ec38
+----[ 342695 ns] Number 8'd15 Functional Test Point PASS!!!
+        [ 352000 ns] Test is running, debug_wb_pc = 0xbfc8a59c
+        [ 362000 ns] Test is running, debug_wb_pc = 0xbfc8bd0c
+        [ 372000 ns] Test is running, debug_wb_pc = 0xbfc8d0d4
+        [ 382000 ns] Test is running, debug_wb_pc = 0xbfc8e47c
+        [ 392000 ns] Test is running, debug_wb_pc = 0xbfc8f9fc
+        [ 402000 ns] Test is running, debug_wb_pc = 0xbfc9116c
+----[ 407295 ns] Number 8'd16 Functional Test Point PASS!!!
+        [ 412000 ns] Test is running, debug_wb_pc = 0xbfc9f460
+        [ 422000 ns] Test is running, debug_wb_pc = 0xbfca07d4
+        [ 432000 ns] Test is running, debug_wb_pc = 0xbfca1b84
+        [ 442000 ns] Test is running, debug_wb_pc = 0xbfca32f4
+        [ 452000 ns] Test is running, debug_wb_pc = 0xbfca4a44
+        [ 462000 ns] Test is running, debug_wb_pc = 0xbfca5dd8
+        [ 472000 ns] Test is running, debug_wb_pc = 0xbfca714c
+----[ 475855 ns] Number 8'd17 Functional Test Point PASS!!!
+        [ 482000 ns] Test is running, debug_wb_pc = 0xbfc6a15c
+        [ 492000 ns] Test is running, debug_wb_pc = 0xbfc6b45c
+        [ 502000 ns] Test is running, debug_wb_pc = 0xbfc6c764
+        [ 512000 ns] Test is running, debug_wb_pc = 0xbfc6da44
+        [ 522000 ns] Test is running, debug_wb_pc = 0xbfc6ed44
+        [ 532000 ns] Test is running, debug_wb_pc = 0xbfc70020
+----[ 532215 ns] Number 8'd18 Functional Test Point PASS!!!
+        [ 542000 ns] Test is running, debug_wb_pc = 0xbfc180d4
+        [ 552000 ns] Test is running, debug_wb_pc = 0xbfc1946c
+        [ 562000 ns] Test is running, debug_wb_pc = 0xbfc1a7fc
+        [ 572000 ns] Test is running, debug_wb_pc = 0xbfc1bb6c
+----[ 580575 ns] Number 8'd19 Functional Test Point PASS!!!
+        [ 582000 ns] Test is running, debug_wb_pc = 0xbfc1e504
+----[ 582455 ns] Number 8'd20 Functional Test Point PASS!!!
+----[ 584335 ns] Number 8'd21 Functional Test Point PASS!!!
+----[ 585745 ns] Number 8'd22 Functional Test Point PASS!!!
+----[ 587165 ns] Number 8'd23 Functional Test Point PASS!!!
+        [ 592000 ns] Test is running, debug_wb_pc = 0xbfc34f28
+        [ 602000 ns] Test is running, debug_wb_pc = 0xbfc35ec8
+----[ 610025 ns] Number 8'd24 Functional Test Point PASS!!!
+        [ 612000 ns] Test is running, debug_wb_pc = 0xbfc14d80
+        [ 622000 ns] Test is running, debug_wb_pc = 0xbfc15d20
+----[ 631455 ns] Number 8'd25 Functional Test Point PASS!!!
+        [ 632000 ns] Test is running, debug_wb_pc = 0xbfc10584
+        [ 642000 ns] Test is running, debug_wb_pc = 0xbfc11524
+        [ 652000 ns] Test is running, debug_wb_pc = 0xbfc124c4
+----[ 653865 ns] Number 8'd26 Functional Test Point PASS!!!
+        [ 662000 ns] Test is running, debug_wb_pc = 0xbfc2ffa0
+        [ 672000 ns] Test is running, debug_wb_pc = 0xbfc30f40
+----[ 675295 ns] Number 8'd27 Functional Test Point PASS!!!
+        [ 682000 ns] Test is running, debug_wb_pc = 0xbfc0be64
+        [ 692000 ns] Test is running, debug_wb_pc = 0xbfc0ce04
+----[ 696725 ns] Number 8'd28 Functional Test Point PASS!!!
+        [ 702000 ns] Test is running, debug_wb_pc = 0xbfc461f8
+        [ 712000 ns] Test is running, debug_wb_pc = 0xbfc47198
+----[ 718155 ns] Number 8'd29 Functional Test Point PASS!!!
+        [ 722000 ns] Test is running, debug_wb_pc = 0xbfc3ec5c
+        [ 732000 ns] Test is running, debug_wb_pc = 0xbfc3fbfc
+----[ 739585 ns] Number 8'd30 Functional Test Point PASS!!!
+        [ 742000 ns] Test is running, debug_wb_pc = 0xbfc09690
+        [ 752000 ns] Test is running, debug_wb_pc = 0xbfc0a630
+----[ 761015 ns] Number 8'd31 Functional Test Point PASS!!!
+        [ 762000 ns] Test is running, debug_wb_pc = 0xbfc66484
+        [ 772000 ns] Test is running, debug_wb_pc = 0xbfc67424
+        [ 782000 ns] Test is running, debug_wb_pc = 0xbfc683c4
+----[ 788465 ns] Number 8'd32 Functional Test Point PASS!!!
+        [ 792000 ns] Test is running, debug_wb_pc = 0xbfc86b10
+        [ 802000 ns] Test is running, debug_wb_pc = 0xbfc87ab0
+        [ 812000 ns] Test is running, debug_wb_pc = 0xbfc88a50
+----[ 815915 ns] Number 8'd33 Functional Test Point PASS!!!
+        [ 822000 ns] Test is running, debug_wb_pc = 0xbfc7c18c
+        [ 832000 ns] Test is running, debug_wb_pc = 0xbfc7d12c
+        [ 842000 ns] Test is running, debug_wb_pc = 0xbfc7e0cc
+----[ 843365 ns] Number 8'd34 Functional Test Point PASS!!!
+        [ 852000 ns] Test is running, debug_wb_pc = 0xbfc0688c
+        [ 862000 ns] Test is running, debug_wb_pc = 0xbfc06cfc
+        [ 872000 ns] Test is running, debug_wb_pc = 0xbfc07160
+        [ 882000 ns] Test is running, debug_wb_pc = 0xbfc075f4
+        [ 892000 ns] Test is running, debug_wb_pc = 0xbfc07a54
+        [ 902000 ns] Test is running, debug_wb_pc = 0xbfc07ee4
+----[ 903445 ns] Number 8'd35 Functional Test Point PASS!!!
+        [ 912000 ns] Test is running, debug_wb_pc = 0xbfc937ac
+        [ 922000 ns] Test is running, debug_wb_pc = 0xbfc93c3c
+        [ 932000 ns] Test is running, debug_wb_pc = 0xbfc9409c
+        [ 942000 ns] Test is running, debug_wb_pc = 0xbfc94530
+        [ 952000 ns] Test is running, debug_wb_pc = 0xbfc94994
+        [ 962000 ns] Test is running, debug_wb_pc = 0xbfc94e04
+        [ 972000 ns] Test is running, debug_wb_pc = 0xbfc9528c
+        [ 982000 ns] Test is running, debug_wb_pc = 0xbfc956ec
+----[ 990885 ns] Number 8'd36 Functional Test Point PASS!!!
+        [ 992000 ns] Test is running, debug_wb_pc = 0xbfc4a038
+        [1002000 ns] Test is running, debug_wb_pc = 0xbfc4afd8
+        [1012000 ns] Test is running, debug_wb_pc = 0xbfc4bf78
+----[1014435 ns] Number 8'd37 Functional Test Point PASS!!!
+        [1022000 ns] Test is running, debug_wb_pc = 0xbfc1354c
+        [1032000 ns] Test is running, debug_wb_pc = 0xbfc144ec
+----[1035745 ns] Number 8'd38 Functional Test Point PASS!!!
+        [1042000 ns] Test is running, debug_wb_pc = 0xbfc0ded0
+----[1045285 ns] Number 8'd39 Functional Test Point PASS!!!
+        [1052000 ns] Test is running, debug_wb_pc = 0xbfc492d8
+----[1054805 ns] Number 8'd40 Functional Test Point PASS!!!
+        [1062000 ns] Test is running, debug_wb_pc = 0xbfc48618
+----[1063705 ns] Number 8'd41 Functional Test Point PASS!!!
+----[1068845 ns] Number 8'd42 Functional Test Point PASS!!!
+        [1072000 ns] Test is running, debug_wb_pc = 0xbfc5cec4
+        [1082000 ns] Test is running, debug_wb_pc = 0xbfc5e314
+        [1092000 ns] Test is running, debug_wb_pc = 0xbfc5f764
+----[1093405 ns] Number 8'd43 Functional Test Point PASS!!!
+        [1102000 ns] Test is running, debug_wb_pc = 0xbfc222b4
+        [1112000 ns] Test is running, debug_wb_pc = 0xbfc238d0
+        [1122000 ns] Test is running, debug_wb_pc = 0xbfc24f24
+----[1131615 ns] Number 8'd44 Functional Test Point PASS!!!
+        [1132000 ns] Test is running, debug_wb_pc = 0xbfc4ddb0
+        [1142000 ns] Test is running, debug_wb_pc = 0xbfc4f414
+        [1152000 ns] Test is running, debug_wb_pc = 0xbfc50a50
+        [1162000 ns] Test is running, debug_wb_pc = 0xbfc520d4
+----[1169585 ns] Number 8'd45 Functional Test Point PASS!!!
+        [1172000 ns] Test is running, debug_wb_pc = 0xbfc705a0
+        [1182000 ns] Test is running, debug_wb_pc = 0xbfc71bf8
+        [1192000 ns] Test is running, debug_wb_pc = 0xbfc73250
+        [1202000 ns] Test is running, debug_wb_pc = 0xbfc7487c
+----[1207795 ns] Number 8'd46 Functional Test Point PASS!!!
+        [1212000 ns] Test is running, debug_wb_pc = 0xbfc989d4
+        [1222000 ns] Test is running, debug_wb_pc = 0xbfc99e0c
+        [1232000 ns] Test is running, debug_wb_pc = 0xbfc9b2fc
+----[1237485 ns] Number 8'd47 Functional Test Point PASS!!!
+        [1242000 ns] Test is running, debug_wb_pc = 0xbfc015e4
+        [1252000 ns] Test is running, debug_wb_pc = 0xbfc029b8
+        [1262000 ns] Test is running, debug_wb_pc = 0xbfc03d4c
+        [1272000 ns] Test is running, debug_wb_pc = 0xbfc05138
+----[1281745 ns] Number 8'd48 Functional Test Point PASS!!!
+        [1282000 ns] Test is running, debug_wb_pc = 0xbfc00d9c
+        [1292000 ns] Test is running, debug_wb_pc = 0xbfc76968
+        [1302000 ns] Test is running, debug_wb_pc = 0xbfc77d94
+        [1312000 ns] Test is running, debug_wb_pc = 0xbfc79134
+        [1322000 ns] Test is running, debug_wb_pc = 0xbfc7a4d4
+----[1328035 ns] Number 8'd49 Functional Test Point PASS!!!
+        [1332000 ns] Test is running, debug_wb_pc = 0xbfc26b1c
+        [1342000 ns] Test is running, debug_wb_pc = 0xbfc27c7c
+        [1352000 ns] Test is running, debug_wb_pc = 0xbfc28ddc
+        [1362000 ns] Test is running, debug_wb_pc = 0xbfc29f3c
+        [1372000 ns] Test is running, debug_wb_pc = 0xbfc2b0a8
+----[1378795 ns] Number 8'd50 Functional Test Point PASS!!!
+----[1380465 ns] Number 8'd51 Functional Test Point PASS!!!
+        [1382000 ns] Test is running, debug_wb_pc = 0xbfc5b6b8
+----[1386445 ns] Number 8'd52 Functional Test Point PASS!!!
+        [1392000 ns] Test is running, debug_wb_pc = 0xbfc49d9c
+----[1393065 ns] Number 8'd53 Functional Test Point PASS!!!
+----[1399365 ns] Number 8'd54 Functional Test Point PASS!!!
+        [1402000 ns] Test is running, debug_wb_pc = 0xbfc7b518
+----[1405985 ns] Number 8'd55 Functional Test Point PASS!!!
+        [1412000 ns] Test is running, debug_wb_pc = 0xbfc5c750
+----[1413235 ns] Number 8'd56 Functional Test Point PASS!!!
+----[1419845 ns] Number 8'd57 Functional Test Point PASS!!!
+        [1422000 ns] Test is running, debug_wb_pc = 0xbfc32228
+----[1424705 ns] Number 8'd58 Functional Test Point PASS!!!
+        [1432000 ns] Test is running, debug_wb_pc = 0xbfc1f400
+        [1442000 ns] Test is running, debug_wb_pc = 0xbfc20334
+----[1450415 ns] Number 8'd59 Functional Test Point PASS!!!
+        [1452000 ns] Test is running, debug_wb_pc = 0xbfc83d5c
+        [1462000 ns] Test is running, debug_wb_pc = 0xbfc84c54
+        [1472000 ns] Test is running, debug_wb_pc = 0xbfc85bc0
+----[1478005 ns] Number 8'd60 Functional Test Point PASS!!!
+        [1482000 ns] Test is running, debug_wb_pc = 0xbfc2c210
+        [1492000 ns] Test is running, debug_wb_pc = 0xbfc2d15c
+----[1498265 ns] Number 8'd61 Functional Test Point PASS!!!
+        [1502000 ns] Test is running, debug_wb_pc = 0xbfc43a98
+        [1512000 ns] Test is running, debug_wb_pc = 0xbfc449c4
+----[1521415 ns] Number 8'd62 Functional Test Point PASS!!!
+        [1522000 ns] Test is running, debug_wb_pc = 0xbfc1ccc0
+        [1532000 ns] Test is running, debug_wb_pc = 0xbfc1dc08
+----[1534505 ns] Number 8'd63 Functional Test Point PASS!!!
+        [1542000 ns] Test is running, debug_wb_pc = 0xbfc607e4
+----[1548375 ns] Number 8'd64 Functional Test Point PASS!!!
+        [1552000 ns] Test is running, debug_wb_pc = 0xbfc536dc
+        [1562000 ns] Test is running, debug_wb_pc = 0xbfc545b4
+        [1572000 ns] Test is running, debug_wb_pc = 0xbfc554a8
+----[1577375 ns] Number 8'd65 Functional Test Point PASS!!!
+        [1582000 ns] Test is running, debug_wb_pc = 0xbfc819d4
+        [1592000 ns] Test is running, debug_wb_pc = 0xbfc828bc
+        [1602000 ns] Test is running, debug_wb_pc = 0xbfc837ac
+----[1604595 ns] Number 8'd66 Functional Test Point PASS!!!
+        [1612000 ns] Test is running, debug_wb_pc = 0xbfc4ce4c
+----[1620015 ns] Number 8'd67 Functional Test Point PASS!!!
+        [1622000 ns] Test is running, debug_wb_pc = 0xbfc92044
+        [1632000 ns] Test is running, debug_wb_pc = 0xbfc92f5c
+----[1635015 ns] Number 8'd68 Functional Test Point PASS!!!
+----[1640615 ns] Number 8'd69 Functional Test Point PASS!!!
+        [1642000 ns] Test is running, debug_wb_pc = 0xbfc00458
+----[1646425 ns] Number 8'd70 Functional Test Point PASS!!!
+        [1652000 ns] Test is running, debug_wb_pc = 0xbfc004a8
+----[1653075 ns] Number 8'd71 Functional Test Point PASS!!!
+----[1659635 ns] Number 8'd72 Functional Test Point PASS!!!
+        [1662000 ns] Test is running, debug_wb_pc = 0xbfc694dc
+----[1666285 ns] Number 8'd73 Functional Test Point PASS!!!
+        [1672000 ns] Test is running, debug_wb_pc = 0xbfc69010
+----[1673835 ns] Number 8'd74 Functional Test Point PASS!!!
+----[1681405 ns] Number 8'd75 Functional Test Point PASS!!!
+        [1682000 ns] Test is running, debug_wb_pc = 0xbfc00388
+----[1688955 ns] Number 8'd76 Functional Test Point PASS!!!
+        [1692000 ns] Test is running, debug_wb_pc = 0xbfc003c4
+----[1696795 ns] Number 8'd77 Functional Test Point PASS!!!
+        [1702000 ns] Test is running, debug_wb_pc = 0xbfc00398
+----[1704635 ns] Number 8'd78 Functional Test Point PASS!!!
+        [1712000 ns] Test is running, debug_wb_pc = 0xbfc0056c
+----[1712385 ns] Number 8'd79 Functional Test Point PASS!!!
+----[1719285 ns] Number 8'd80 Functional Test Point PASS!!!
+        [1722000 ns] Test is running, debug_wb_pc = 0xbfc5fa90
+        [1732000 ns] Test is running, debug_wb_pc = 0xbfc5fb9c
+----[1737345 ns] Number 8'd81 Functional Test Point PASS!!!
+        [1742000 ns] Test is running, debug_wb_pc = 0xbfc00620
+----[1745825 ns] Number 8'd82 Functional Test Point PASS!!!
+        [1752000 ns] Test is running, debug_wb_pc = 0xbfc0047c
+        [1762000 ns] Test is running, debug_wb_pc = 0xbfc003b0
+----[1762635 ns] Number 8'd83 Functional Test Point PASS!!!
+        [1772000 ns] Test is running, debug_wb_pc = 0xbfc0068c
+----[1779445 ns] Number 8'd84 Functional Test Point PASS!!!
+        [1782000 ns] Test is running, debug_wb_pc = 0xbfc00438
+        [1792000 ns] Test is running, debug_wb_pc = 0xbfc0052c
+----[1796255 ns] Number 8'd85 Functional Test Point PASS!!!
+        [1802000 ns] Test is running, debug_wb_pc = 0xbfc00690
+        [1812000 ns] Test is running, debug_wb_pc = 0xbfc0067c
+----[1813065 ns] Number 8'd86 Functional Test Point PASS!!!
+        [1822000 ns] Test is running, debug_wb_pc = 0xbfc0039c
+----[1829875 ns] Number 8'd87 Functional Test Point PASS!!!
+        [1832000 ns] Test is running, debug_wb_pc = 0xbfc00678
+        [1842000 ns] Test is running, debug_wb_pc = 0xbfc1e230
+----[1846685 ns] Number 8'd88 Functional Test Point PASS!!!
+        [1852000 ns] Test is running, debug_wb_pc = 0xbfc0038c
+        [1862000 ns] Test is running, debug_wb_pc = 0xbfc003a4
+----[1863505 ns] Number 8'd89 Functional Test Point PASS!!!
+        [1872000 ns] Test is running, debug_wb_pc = 0xbfc004dc
+----[1880335 ns] Number 8'd90 Functional Test Point PASS!!!
+        [1882000 ns] Test is running, debug_wb_pc = 0xbfc3b758
+        [1892000 ns] Test is running, debug_wb_pc = 0xbfc004c8
+----[1897155 ns] Number 8'd91 Functional Test Point PASS!!!
+        [1902000 ns] Test is running, debug_wb_pc = 0xbfc00490
+        [1912000 ns] Test is running, debug_wb_pc = 0xbfc0052c
+----[1913975 ns] Number 8'd92 Functional Test Point PASS!!!
+        [1922000 ns] Test is running, debug_wb_pc = 0xbfc006b0
+----[1930795 ns] Number 8'd93 Functional Test Point PASS!!!
+        [1932000 ns] Test is running, debug_wb_pc = 0xbfc003f4
+        [1942000 ns] Test is running, debug_wb_pc = 0xbfc00694
+----[1947615 ns] Number 8'd94 Functional Test Point PASS!!!
+==============================================================
+Test end!
+----PASS!!!
+$finish called at time : 1948085 ns : File "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/testbench/mycpu_tb.v" Line 267
+run: Time (s): cpu = 00:02:04 ; elapsed = 00:01:49 . Memory (MB): peak = 1617.574 ; gain = 238.305
+reset_project
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+close_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1622.324 ; gain = 0.000
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Dec 11 00:38:28 2022...

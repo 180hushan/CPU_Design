@@ -1,0 +1,97 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" into library xpm
+INFO: [VRFC 10-311] analyzing module xpm_cdc_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_gray
+INFO: [VRFC 10-311] analyzing module xpm_cdc_handshake
+INFO: [VRFC 10-311] analyzing module xpm_cdc_pulse
+INFO: [VRFC 10-311] analyzing module xpm_cdc_array_single
+INFO: [VRFC 10-311] analyzing module xpm_cdc_sync_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_async_rst
+INFO: [VRFC 10-311] analyzing module xpm_cdc_low_latency_handshake
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/soft/Vivado2020.2/Vivado/2020.2/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" into library xpm
+INFO: [VRFC 10-311] analyzing module xpm_memory_base
+INFO: [VRFC 10-311] analyzing module asym_bwe_bb
+INFO: [VRFC 10-311] analyzing module xpm_memory_dpdistram
+INFO: [VRFC 10-311] analyzing module xpm_memory_dprom
+INFO: [VRFC 10-311] analyzing module xpm_memory_sdpram
+INFO: [VRFC 10-311] analyzing module xpm_memory_spram
+INFO: [VRFC 10-311] analyzing module xpm_memory_sprom
+INFO: [VRFC 10-311] analyzing module xpm_memory_tdpram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll_clk_wiz.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll_clk_wiz
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/clk_pll/clk_pll.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clk_pll
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic/simulation/blk_mem_gen_v8_4.v" into library blk_mem_gen_v8_4_4
+INFO: [VRFC 10-311] analyzing module STATE_LOGIC_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_muxf7_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_clr_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_pre_v8_4
+INFO: [VRFC 10-311] analyzing module beh_vlog_ff_ce_clr_v8_4
+INFO: [VRFC 10-311] analyzing module write_netlist_v8_4
+INFO: [VRFC 10-311] analyzing module read_netlist_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_write_wrapper_beh_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_read_wrapper_beh_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_axi_regs_fwd_v8_4
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_output_stage
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_softecc_output_reg_stage
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4_mem_module
+INFO: [VRFC 10-311] analyzing module blk_mem_gen_v8_4_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/data_ram/sim/data_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/sim/inst_ram.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_ram
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module exe_stage
+INFO: [VRFC 10-2458] undeclared symbol fs_to_ds_ex, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:75]
+INFO: [VRFC 10-2458] undeclared symbol overflow_inst, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:76]
+INFO: [VRFC 10-2458] undeclared symbol overflow, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:176]
+WARNING: [VRFC 10-3380] identifier 'lo' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:110]
+WARNING: [VRFC 10-3380] identifier 'hi' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:111]
+WARNING: [VRFC 10-3380] identifier 'div_ready_i' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/EXE_stage.v:147]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module id_stage
+INFO: [VRFC 10-2458] undeclared symbol ds_bd, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:60]
+INFO: [VRFC 10-2458] undeclared symbol ds_badvaddr, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:61]
+WARNING: [VRFC 10-2938] 'ds_bd' is already implicitly declared on line 60 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:215]
+WARNING: [VRFC 10-2938] 'ds_badvaddr' is already implicitly declared on line 61 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:216]
+WARNING: [VRFC 10-2292] extra semicolon is not allowed here in this dialect. Use SystemVerilog mode [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:441]
+WARNING: [VRFC 10-3380] identifier 'br_taken' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:88]
+WARNING: [VRFC 10-3380] identifier 'rs_wait' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:90]
+WARNING: [VRFC 10-3380] identifier 'rt_wait' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:91]
+WARNING: [VRFC 10-3380] identifier 'inst_beq' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:93]
+WARNING: [VRFC 10-3380] identifier 'inst_bgez' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:94]
+WARNING: [VRFC 10-3380] identifier 'inst_bgezal' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:95]
+WARNING: [VRFC 10-3380] identifier 'mem_control' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/ID_stage.v:235]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/IF_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module if_stage
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/MEM_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mem_stage
+WARNING: [VRFC 10-2292] extra semicolon is not allowed here in this dialect. Use SystemVerilog mode [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/MEM_stage.v:156]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module wb_stage
+INFO: [VRFC 10-2458] undeclared symbol cp0_addr, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:56]
+WARNING: [VRFC 10-2938] 'cp0_addr' is already implicitly declared on line 56 [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:101]
+WARNING: [VRFC 10-3380] identifier 'cp0_rdata' is used before its declaration [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/WB_stage.v:95]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/BRIDGE/bridge_1x2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bridge_1x2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/CONFREG/confreg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module confreg
+INFO: [VRFC 10-2458] undeclared symbol conf_we, assumed default net type wire [D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/CONFREG/confreg.v:160]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/cp0_reg.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module cp0_reg
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/div.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module div
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/mycpu_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mycpu_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/soc_lite_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module soc_lite_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/rtl/myCPU/tools.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_5_32
+INFO: [VRFC 10-311] analyzing module decoder_6_64
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/testbench/mycpu_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_top
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Study/LOONGSON/cpu_project/cpu_design_proj/cpu_design/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

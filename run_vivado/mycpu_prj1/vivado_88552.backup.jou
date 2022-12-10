@@ -1,0 +1,204 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Dec  9 15:14:14 2022
+# Process ID: 88552
+# Current directory: D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent130704 D:\Study\LOONGSON\cpu_project\cpu_design_proj\proj_7_2\CPU_CDE\mycpu_verify\run_vivado\mycpu_prj1\mycpu_prj1.xpr
+# Log file: D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/vivado.log
+# Journal file: D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.xpr
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.Coe_File {D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/soft/func_lab9/obj/inst_ram.coe}] [get_ips inst_ram]
+generate_target all [get_files  D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci]
+catch { config_ip_cache -export [get_ips -all inst_ram] }
+export_ip_user_files -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci]
+launch_runs inst_ram_synth_1 -jobs 6
+wait_on_run inst_ram_synth_1
+export_simulation -of_objects [get_files D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/rtl/xilinx_ip/inst_ram/inst_ram.xci] -directory D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/sim_scripts -ip_user_files_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files -ipstatic_source_dir D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic -lib_map_path [list {modelsim=D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/modelsim} {questa=D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/questa} {riviera=D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/riviera} {activehdl=D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.cache/compile_simlib/activehdl}] -force -quiet
+launch_simulation
+open_wave_config D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/debug_wb_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/debug_wb_rf_wdata}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/cp0_rdata}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_final_result}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/addr_i}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/cp0_badvaddr}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/store_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/ds_to_es_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/overflow_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/load_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/store_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/ds_to_es_excode}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_excode}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/wb_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_badvaddr}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/fs_to_ds_ex}} 
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_badvaddr}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/wb_badvaddr}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/wb_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/wb_excode}} 
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/debug_wb_err}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/nextpc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/we_i}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/cp0_count}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/to_fs_valid}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_allowin}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+log_wave {/tb_top/soc_lite/cpu/id_stage/ds_pc} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/ds_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/cp0_epc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/br_target}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/br_taken}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/inst_add}} {{/tb_top/soc_lite/cpu/id_stage/inst_addu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sub}} {{/tb_top/soc_lite/cpu/id_stage/inst_subu}} {{/tb_top/soc_lite/cpu/id_stage/inst_slt}} {{/tb_top/soc_lite/cpu/id_stage/inst_slti}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_and}} {{/tb_top/soc_lite/cpu/id_stage/inst_andi}} {{/tb_top/soc_lite/cpu/id_stage/inst_or}} {{/tb_top/soc_lite/cpu/id_stage/inst_ori}} {{/tb_top/soc_lite/cpu/id_stage/inst_xor}} {{/tb_top/soc_lite/cpu/id_stage/inst_xori}} {{/tb_top/soc_lite/cpu/id_stage/inst_nor}} {{/tb_top/soc_lite/cpu/id_stage/inst_sll}} {{/tb_top/soc_lite/cpu/id_stage/inst_sllv}} {{/tb_top/soc_lite/cpu/id_stage/inst_srl}} {{/tb_top/soc_lite/cpu/id_stage/inst_srlv}} {{/tb_top/soc_lite/cpu/id_stage/inst_sra}} {{/tb_top/soc_lite/cpu/id_stage/inst_srav}} {{/tb_top/soc_lite/cpu/id_stage/inst_addi}} {{/tb_top/soc_lite/cpu/id_stage/inst_addiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lui}} {{/tb_top/soc_lite/cpu/id_stage/inst_lw}} {{/tb_top/soc_lite/cpu/id_stage/inst_sw}} {{/tb_top/soc_lite/cpu/id_stage/inst_beq}} {{/tb_top/soc_lite/cpu/id_stage/inst_bne}} {{/tb_top/soc_lite/cpu/id_stage/inst_jal}} {{/tb_top/soc_lite/cpu/id_stage/inst_jr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mult}} {{/tb_top/soc_lite/cpu/id_stage/inst_multu}} {{/tb_top/soc_lite/cpu/id_stage/inst_div}} {{/tb_top/soc_lite/cpu/id_stage/inst_divu}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfhi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mflo}} {{/tb_top/soc_lite/cpu/id_stage/inst_mthi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtlo}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgtz}} {{/tb_top/soc_lite/cpu/id_stage/inst_blez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltz}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgezal}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltzal}} {{/tb_top/soc_lite/cpu/id_stage/inst_j}} {{/tb_top/soc_lite/cpu/id_stage/inst_jalr}} {{/tb_top/soc_lite/cpu/id_stage/inst_lb}} {{/tb_top/soc_lite/cpu/id_stage/inst_lbu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lh}} {{/tb_top/soc_lite/cpu/id_stage/inst_lhu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwl}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwr}} {{/tb_top/soc_lite/cpu/id_stage/inst_sb}} {{/tb_top/soc_lite/cpu/id_stage/inst_sh}} {{/tb_top/soc_lite/cpu/id_stage/inst_swl}} {{/tb_top/soc_lite/cpu/id_stage/inst_swr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_syscall}} {{/tb_top/soc_lite/cpu/id_stage/inst_eret}} {{/tb_top/soc_lite/cpu/id_stage/inst_break}} {{/tb_top/soc_lite/cpu/id_stage/overflow_inst}} {{/tb_top/soc_lite/cpu/id_stage/inst_no_dest}} 
+relaunch_sim
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/br_target}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/inst_syscall}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/c0_epc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/inst_add}} {{/tb_top/soc_lite/cpu/id_stage/inst_addu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sub}} {{/tb_top/soc_lite/cpu/id_stage/inst_subu}} {{/tb_top/soc_lite/cpu/id_stage/inst_slt}} {{/tb_top/soc_lite/cpu/id_stage/inst_slti}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_and}} {{/tb_top/soc_lite/cpu/id_stage/inst_andi}} {{/tb_top/soc_lite/cpu/id_stage/inst_or}} {{/tb_top/soc_lite/cpu/id_stage/inst_ori}} {{/tb_top/soc_lite/cpu/id_stage/inst_xor}} {{/tb_top/soc_lite/cpu/id_stage/inst_xori}} {{/tb_top/soc_lite/cpu/id_stage/inst_nor}} {{/tb_top/soc_lite/cpu/id_stage/inst_sll}} {{/tb_top/soc_lite/cpu/id_stage/inst_sllv}} {{/tb_top/soc_lite/cpu/id_stage/inst_srl}} {{/tb_top/soc_lite/cpu/id_stage/inst_srlv}} {{/tb_top/soc_lite/cpu/id_stage/inst_sra}} {{/tb_top/soc_lite/cpu/id_stage/inst_srav}} {{/tb_top/soc_lite/cpu/id_stage/inst_addi}} {{/tb_top/soc_lite/cpu/id_stage/inst_addiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lui}} {{/tb_top/soc_lite/cpu/id_stage/inst_lw}} {{/tb_top/soc_lite/cpu/id_stage/inst_sw}} {{/tb_top/soc_lite/cpu/id_stage/inst_beq}} {{/tb_top/soc_lite/cpu/id_stage/inst_bne}} {{/tb_top/soc_lite/cpu/id_stage/inst_jal}} {{/tb_top/soc_lite/cpu/id_stage/inst_jr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mult}} {{/tb_top/soc_lite/cpu/id_stage/inst_multu}} {{/tb_top/soc_lite/cpu/id_stage/inst_div}} {{/tb_top/soc_lite/cpu/id_stage/inst_divu}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfhi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mflo}} {{/tb_top/soc_lite/cpu/id_stage/inst_mthi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtlo}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgtz}} {{/tb_top/soc_lite/cpu/id_stage/inst_blez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltz}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgezal}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltzal}} {{/tb_top/soc_lite/cpu/id_stage/inst_j}} {{/tb_top/soc_lite/cpu/id_stage/inst_jalr}} {{/tb_top/soc_lite/cpu/id_stage/inst_lb}} {{/tb_top/soc_lite/cpu/id_stage/inst_lbu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lh}} {{/tb_top/soc_lite/cpu/id_stage/inst_lhu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwl}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwr}} {{/tb_top/soc_lite/cpu/id_stage/inst_sb}} {{/tb_top/soc_lite/cpu/id_stage/inst_sh}} {{/tb_top/soc_lite/cpu/id_stage/inst_swl}} {{/tb_top/soc_lite/cpu/id_stage/inst_swr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_syscall}} {{/tb_top/soc_lite/cpu/id_stage/inst_eret}} {{/tb_top/soc_lite/cpu/id_stage/inst_break}} {{/tb_top/soc_lite/cpu/id_stage/overflow_inst}} {{/tb_top/soc_lite/cpu/id_stage/inst_no_dest}} {{/tb_top/soc_lite/cpu/id_stage/other_inst}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/ds_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_eret}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/addr_i}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/cp0_addr}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/ds_inst}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/inst_eret}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/store_ex}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/we_i}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/u_cp0_reg/rdata_o}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/nextpc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/ws_eret}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/no_store}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_eret}} 
+relaunch_sim
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_allowin}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/to_fs_valid}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/ds_allowin}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_allowin}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/br_stall}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/load_stall}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/br_taken}} 
+relaunch_sim
+run all
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/if_stage/fs_inst}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/ds_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/inst_add}} {{/tb_top/soc_lite/cpu/id_stage/inst_addu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sub}} {{/tb_top/soc_lite/cpu/id_stage/inst_subu}} {{/tb_top/soc_lite/cpu/id_stage/inst_slt}} {{/tb_top/soc_lite/cpu/id_stage/inst_slti}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltu}} {{/tb_top/soc_lite/cpu/id_stage/inst_sltiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_and}} {{/tb_top/soc_lite/cpu/id_stage/inst_andi}} {{/tb_top/soc_lite/cpu/id_stage/inst_or}} {{/tb_top/soc_lite/cpu/id_stage/inst_ori}} {{/tb_top/soc_lite/cpu/id_stage/inst_xor}} {{/tb_top/soc_lite/cpu/id_stage/inst_xori}} {{/tb_top/soc_lite/cpu/id_stage/inst_nor}} {{/tb_top/soc_lite/cpu/id_stage/inst_sll}} {{/tb_top/soc_lite/cpu/id_stage/inst_sllv}} {{/tb_top/soc_lite/cpu/id_stage/inst_srl}} {{/tb_top/soc_lite/cpu/id_stage/inst_srlv}} {{/tb_top/soc_lite/cpu/id_stage/inst_sra}} {{/tb_top/soc_lite/cpu/id_stage/inst_srav}} {{/tb_top/soc_lite/cpu/id_stage/inst_addi}} {{/tb_top/soc_lite/cpu/id_stage/inst_addiu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lui}} {{/tb_top/soc_lite/cpu/id_stage/inst_lw}} {{/tb_top/soc_lite/cpu/id_stage/inst_sw}} {{/tb_top/soc_lite/cpu/id_stage/inst_beq}} {{/tb_top/soc_lite/cpu/id_stage/inst_bne}} {{/tb_top/soc_lite/cpu/id_stage/inst_jal}} {{/tb_top/soc_lite/cpu/id_stage/inst_jr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mult}} {{/tb_top/soc_lite/cpu/id_stage/inst_multu}} {{/tb_top/soc_lite/cpu/id_stage/inst_div}} {{/tb_top/soc_lite/cpu/id_stage/inst_divu}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfhi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mflo}} {{/tb_top/soc_lite/cpu/id_stage/inst_mthi}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtlo}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgtz}} {{/tb_top/soc_lite/cpu/id_stage/inst_blez}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltz}} {{/tb_top/soc_lite/cpu/id_stage/inst_bgezal}} {{/tb_top/soc_lite/cpu/id_stage/inst_bltzal}} {{/tb_top/soc_lite/cpu/id_stage/inst_j}} {{/tb_top/soc_lite/cpu/id_stage/inst_jalr}} {{/tb_top/soc_lite/cpu/id_stage/inst_lb}} {{/tb_top/soc_lite/cpu/id_stage/inst_lbu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lh}} {{/tb_top/soc_lite/cpu/id_stage/inst_lhu}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwl}} {{/tb_top/soc_lite/cpu/id_stage/inst_lwr}} {{/tb_top/soc_lite/cpu/id_stage/inst_sb}} {{/tb_top/soc_lite/cpu/id_stage/inst_sh}} {{/tb_top/soc_lite/cpu/id_stage/inst_swl}} {{/tb_top/soc_lite/cpu/id_stage/inst_swr}} {{/tb_top/soc_lite/cpu/id_stage/inst_mfc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_mtc0}} {{/tb_top/soc_lite/cpu/id_stage/inst_syscall}} {{/tb_top/soc_lite/cpu/id_stage/inst_eret}} {{/tb_top/soc_lite/cpu/id_stage/inst_break}} {{/tb_top/soc_lite/cpu/id_stage/overflow_inst}} {{/tb_top/soc_lite/cpu/id_stage/inst_no_dest}} {{/tb_top/soc_lite/cpu/id_stage/other_inst}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/debug_wb_rf_wnum}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/wb_stage/ws_dest}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_pc}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/exe_stage/es_dest}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/dest}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/dst_is_rt}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/dst_is_r31}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/rd}} 
+current_wave_config {tb_top_behav.wcfg}
+add_wave {{/tb_top/soc_lite/cpu/id_stage/other_inst}} 
+relaunch_sim
+run all
+relaunch_sim
+run all
+save_wave_config {D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config D:/Study/LOONGSON/cpu_project/cpu_design_proj/proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/tb_top_behav.wcfg
+source tb_top.tcl
+run all
