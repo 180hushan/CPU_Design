@@ -77,11 +77,18 @@ module confreg
     input             timer_clk,
     input             resetn,     
     // read and write from cpu
-	input             conf_en,      
-	input      [3 :0] conf_wen,      
+	input             conf_req ,
+	input             conf_wr  ,
+	input      [1 :0] conf_size,
+	input      [3 :0] conf_wstrb,      
 	input      [31:0] conf_addr,    
 	input      [31:0] conf_wdata,   
+    output            conf_addr_ok,
+    output            conf_data_ok,
 	output     [31:0] conf_rdata,   
+    //for CPU_CDE_SRAM
+    output     [4 :0] ram_random_mask  ,
+
     // read and write to device on board
     output     [15:0] led,          
     output     [1 :0] led_rg0,      
@@ -119,14 +126,18 @@ module confreg
                         
     // read data has one cycle delay
     reg [31:0] conf_rdata_reg;
+    reg        conf_req_reg;
+    assign conf_addr_ok = 1'b1;
+    assign conf_data_ok = conf_req_reg;
     assign conf_rdata = conf_rdata_reg;
     always @(posedge clk)
     begin
+        conf_req_reg   <= conf_req && conf_addr_ok;
         if(~resetn)
         begin
             conf_rdata_reg <= 32'd0;
         end
-        else if (conf_en)
+        else if (conf_req && conf_addr_ok)
         begin
             case (conf_addr[15:0])
                 `CR0_ADDR      : conf_rdata_reg <= cr0          ;
@@ -157,7 +168,7 @@ module confreg
     end
 
     //conf write, only support a word write
-    assign conf_we = conf_en & (|conf_wen);
+    assign conf_we = conf_req & conf_wr & conf_addr_ok;
 
 //-------------------------{confreg register}begin-----------------------//
 wire write_cr0 = conf_we & (conf_addr[15:0]==`CR0_ADDR);
@@ -319,16 +330,54 @@ begin
 end
 //----------------------------{virtual uart}end--------------------------//
 
+//--------------------------{axirandom mask}begin------------------------//
+wire [15:0] switch_led;
+wire [15:0] led_r_n;
+assign led_r_n = ~switch_led;
+
+reg [22:0] pseudo_random_23;
+reg        no_mask;     //if led_r_n[7:0] is all 1, no mask 
+reg        short_delay; //memory short delay
+always @ (posedge clk)
+begin
+   if (!resetn)
+       pseudo_random_23 <= simu_flag[0] ? `RANDOM_SEED : {7'b1010101,led_r_n};
+   else
+       pseudo_random_23 <= {pseudo_random_23[21:0],pseudo_random_23[22] ^ pseudo_random_23[17]};
+
+   if(!resetn)
+       no_mask <= pseudo_random_23[15:0]==16'h00FF;
+
+   if(!resetn)
+       short_delay <= pseudo_random_23[7:0]==8'hFF;
+end
+assign ram_random_mask[0] = (pseudo_random_23[10]&pseudo_random_23[20]) & (short_delay|(pseudo_random_23[11]^pseudo_random_23[5]))
+                          | no_mask;
+assign ram_random_mask[1] = (pseudo_random_23[ 9]&pseudo_random_23[17]) & (short_delay|(pseudo_random_23[12]^pseudo_random_23[4]))
+                          | no_mask;
+assign ram_random_mask[2] = (pseudo_random_23[ 8]^pseudo_random_23[22]) & (short_delay|(pseudo_random_23[13]^pseudo_random_23[3]))
+                          | no_mask;
+assign ram_random_mask[3] = (pseudo_random_23[ 7]&pseudo_random_23[19]) & (short_delay|(pseudo_random_23[14]^pseudo_random_23[2]))
+                          | no_mask;
+assign ram_random_mask[4] = (pseudo_random_23[ 6]^pseudo_random_23[16]) & (short_delay|(pseudo_random_23[15]^pseudo_random_23[1]))
+                          | no_mask;
+
+//---------------------------{axirandom mask}end-------------------------//
+
 //--------------------------------{led}begin-----------------------------//
 //led display
 //led_data[31:0]
 wire write_led = conf_we & (conf_addr[15:0]==`LED_ADDR);
+
 assign led = led_data[15:0];
+
+assign switch_led = {{2{switch[7]}},{2{switch[6]}},{2{switch[5]}},{2{switch[4]}},
+                    {2{switch[3]}},{2{switch[2]}},{2{switch[1]}},{2{switch[0]}}};
 always @(posedge clk)
 begin
     if(!resetn)
     begin
-        led_data <= 32'h0;
+        led_data <= {16'h0,switch_led};
     end
     else if(write_led)
     begin

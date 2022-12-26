@@ -24,8 +24,10 @@ verilog xil_defaultlib  --include "../../../../../../rtl/myCPU" --include "../..
 "../../../../../../rtl/myCPU/cp0_reg.v" \
 "../../../../../../rtl/myCPU/div.v" \
 "../../../../../../rtl/myCPU/mycpu_top.v" \
+"../../../../../../rtl/myCPU/pre_if_stage.v" \
 "../../../../../../rtl/myCPU/regfile.v" \
-"../../../../../../rtl/soc_lite_top.v" \
+"../../../../../../rtl/soc_sram_lite_top.v" \
+"../../../../../../rtl/ram_wrap/sram_wrap.v" \
 "../../../../../../rtl/myCPU/tools.v" \
 "../../../../../../testbench/mycpu_tb.v" \
 

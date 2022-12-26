@@ -13,10 +13,24 @@ module exe_stage(
     output                         es_to_ms_valid,
     output [`ES_TO_MS_BUS_WD -1:0] es_to_ms_bus  ,
     // data sram interface
-    output        data_sram_en   ,
-    output [ 3:0] data_sram_wen  ,
-    output [31:0] data_sram_addr ,
-    output [31:0] data_sram_wdata,
+    // output        data_sram_en   ,
+    // output [ 3:0] data_sram_wen  ,
+    // output [31:0] data_sram_addr ,
+    // output [31:0] data_sram_wdata,
+
+    // from ms
+    input                          ms_inst_unable,
+
+    output          data_sram_req,
+    output          data_sram_wr,
+    output  [ 1:0]  data_sram_size,
+    output  [31:0]  data_sram_wdata,
+    output  [ 3:0]  data_sram_wstrb,
+    output  [31:0]  data_sram_addr,
+    input           data_sram_addr_ok,
+    input   [31:0]  data_sram_rdata,
+    input           data_sram_data_ok,
+    output          es_data_waiting, 
 
     output      [4:0]       EXE_dest    ,
     output                  es_load_op  ,
@@ -121,6 +135,9 @@ wire        no_store ;
 assign no_store = ms_ex | ws_ex | es_ex | ms_eret | ws_eret ;
 
 assign es_to_ms_bus = {
+                       es_wait_mem      ,   //226:226
+                       es_data_ok       ,   //225:225
+                       es_data          ,   //224:193
                        es_excode        ,  //192:161
                        es_badvaddr      ,  //160:129
                        es_cp0_addr      ,  //128:121
@@ -144,7 +161,12 @@ assign es_to_ms_bus = {
 // assign es_ready_go    =  es_valid & (((mult_div[3:2] == 2'b00) | div_ready_i) & !ws_ex)   ;
 // assign es_ready_go    =  (mult_div[3:2] == 2'b00) && !ws_ex && es_valid ?   div_ready_i :
 //                             1'b1 ;
-assign es_ready_go    =  es_valid & (((mult_div[3:2] == 2'b00) | div_ready_i) | ((mult_div[3:2] == 2'b10) & ws_ex) | ws_eret)   ;
+// assign es_ready_go    =  es_valid & ((((mult_div[3:2] == 2'b00) | div_ready_i) | ((mult_div[3:2] == 2'b10) & ws_ex) | ws_eret) | ((es_mem_we || es_mem_re ) & es_addr_ok || es_ex))   ;
+assign es_ready_go    =  (ws_ex || ws_eret)   ?   1'b1 :
+                         (mult_div[3:2] == 2'b01) && !ws_ex && !ws_eret ?   div_ready_i :
+                         (mult_div[3:2] == 2'b10) && !ws_ex && !ws_eret ?   div_ready_i :
+                         (es_mem_we || es_mem_re )                      ?   es_addr_ok || es_ex :   
+                            1'b1 ;
 assign es_allowin     = !es_valid || es_ready_go && ms_allowin ;
 assign es_to_ms_valid =  es_valid && es_ready_go && !ws_eret && !ws_ex ;
 always @(posedge clk) begin
@@ -240,7 +262,7 @@ reg     [31:0]      lo ;
 
 always @(posedge clk) begin
     if(mult_div != 4'b0000 | mf_mt[2] == 1'b1) begin
-        if(mult_div[1:0] != 2'b00 && !no_store) begin
+        if(mult_div[1:0] != 2'b00 && !no_store && es_valid) begin
             lo  <=  mult_result[31:0] ;
         end
         else if(mult_div[3:2] != 2'b00 && !no_store && div_ready_i) begin
@@ -252,7 +274,7 @@ always @(posedge clk) begin
     end
 
     if(mult_div != 4'b0000 | mf_mt[3] == 1'b1) begin
-        if(mult_div[1:0] != 2'b00 && !no_store) begin
+        if(mult_div[1:0] != 2'b00 && !no_store && es_valid) begin
             hi  <=  mult_result[63:32] ;
         end
         else if(mult_div[3:2] != 2'b00 && !no_store && div_ready_i) begin
@@ -335,11 +357,99 @@ assign  sram_wen  =  inst_is_sb  ?  (es_alu_result[1:0] == 2'b00  ?  4'b0001  :
                                     )   :
                                     4'b1111     ;
 
+wire [ 1:0] st_addr;
 
-assign data_sram_en    = 1'b1;
-assign data_sram_wen   =  (es_mem_we && !no_store && es_valid) ? sram_wen : 4'h0;
-assign data_sram_addr  = es_alu_result;
-assign data_sram_wdata = write_mem_data;
+assign st_addr = es_alu_result[1:0];
+
+wire [ 1:0] lwl_swl_size;
+wire [ 1:0] lwr_swr_size;
+
+assign lwl_swl_size =
+    ( {2{st_addr == 2'h0}} & 2'h0 ) |
+    ( {2{st_addr == 2'h1}} & 2'h1 ) |
+    ( {2{st_addr == 2'h2}} & 2'h2 ) |
+    ( {2{st_addr == 2'h3}} & 2'h2 );
+
+assign lwr_swr_size =
+    ( {2{st_addr == 2'h0}} & 2'h2 ) |
+    ( {2{st_addr == 2'h1}} & 2'h2 ) |
+    ( {2{st_addr == 2'h2}} & 2'h1 ) |
+    ( {2{st_addr == 2'h3}} & 2'h0 );
+
+wire        es_mem_re     ;
+
+assign  es_mem_re   =   inst_is_lw | inst_is_lh | inst_is_lhu | inst_is_lb | inst_is_lbu | inst_is_lwl | inst_is_lwr;
+
+// assign data_sram_en    = 1'b1;
+// assign data_sram_wen   =  (es_mem_we && !no_store && es_valid) ? sram_wen : 4'h0;
+// assign data_sram_addr  = es_alu_result;
+// assign data_sram_wdata = write_mem_data;
+
+assign data_sram_req = 
+    es_valid &&
+    // ms_allowin &&
+    !es_addr_ok_r && 
+    (es_mem_we || es_mem_re) && !no_store;
+
+assign data_sram_wr     = es_mem_we;
+
+assign data_sram_size   =
+    ( {2{inst_is_lw || inst_is_sw}}                 & 2'h2          ) |
+    ( {2{inst_is_lh || inst_is_lhu || inst_is_sh}}  & 2'h1          ) |
+    ( {2{inst_is_lb || inst_is_lbu || inst_is_sb}}  & 2'h0          ) |
+    ( {2{inst_is_lwl || inst_is_swl}}               & lwl_swl_size  ) |
+    ( {2{inst_is_lwr || inst_is_swr}}               & lwr_swr_size  );
+assign data_sram_addr   =
+    (inst_is_lwl || inst_is_swl) ? {es_alu_result[31:2], 2'b0} : es_alu_result[31:0];
+
+wire        es_data_sram_data_ok;
+reg         es_addr_ok_r;
+wire        es_addr_ok;
+
+reg         es_data_buff_valid;
+reg  [31:0] es_data_buff;
+
+wire        es_data_ok;
+wire [31:0] es_data;
+
+wire    es_wait_mem; 
+
+assign es_data_waiting = es_valid && es_addr_ok && !es_data_ok;
+
+assign es_data_sram_data_ok = data_sram_data_ok && ms_inst_unable;
+
+assign data_sram_wdata  = write_mem_data;
+assign data_sram_wstrb  = sram_wen;
+
+always @ (posedge clk) begin
+    if (reset) begin
+        es_addr_ok_r <= 1'b0;
+    end else if (data_sram_req && data_sram_addr_ok && !ms_allowin) begin
+        es_addr_ok_r <= 1'b1;
+    end else if (ms_allowin) begin
+        es_addr_ok_r <= 1'b0;
+    end
+end
+assign es_addr_ok   = (data_sram_req && data_sram_addr_ok) || es_addr_ok_r;
+
+always @ (posedge clk) begin
+    if (reset) begin
+        es_data_buff_valid  <= 1'b0;
+        es_data_buff        <= 32'h0;
+    end else if (ms_allowin || no_store) begin
+        es_data_buff_valid  <= 1'b0;
+        es_data_buff        <= 32'h0;
+    end else if (es_addr_ok && es_data_sram_data_ok && !ms_allowin) begin
+        es_data_buff_valid  <= 1'b1;
+        es_data_buff        <= data_sram_rdata;
+    end
+end
+assign es_data_ok   = es_data_buff_valid || (es_addr_ok && es_data_sram_data_ok);
+assign es_data =
+    es_data_buff_valid ?    es_data_buff :
+    data_sram_rdata;
+
+assign es_wait_mem = es_valid && es_addr_ok;
 
 assign es_inst_mfc0_o = es_valid && es_inst_mfc0 ;
 

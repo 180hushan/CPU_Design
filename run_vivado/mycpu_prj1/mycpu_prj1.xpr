@@ -44,20 +44,20 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic"/>
     <Option Name="UseIPStaticLibs" Val="0"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="160"/>
+    <Option Name="WTXSimLaunchSim" Val="217"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="26"/>
-    <Option Name="WTModelSimExportSim" Val="26"/>
-    <Option Name="WTQuestaExportSim" Val="26"/>
-    <Option Name="WTIesExportSim" Val="26"/>
-    <Option Name="WTVcsExportSim" Val="26"/>
-    <Option Name="WTRivieraExportSim" Val="26"/>
-    <Option Name="WTActivehdlExportSim" Val="26"/>
+    <Option Name="WTXSimExportSim" Val="33"/>
+    <Option Name="WTModelSimExportSim" Val="33"/>
+    <Option Name="WTQuestaExportSim" Val="33"/>
+    <Option Name="WTIesExportSim" Val="33"/>
+    <Option Name="WTVcsExportSim" Val="33"/>
+    <Option Name="WTRivieraExportSim" Val="33"/>
+    <Option Name="WTActivehdlExportSim" Val="33"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -160,7 +160,21 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../rtl/myCPU/pre_if_stage.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../rtl/myCPU/regfile.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../rtl/ram_wrap/sram_wrap.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -174,7 +188,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/soc_lite_top.v">
+      <File Path="$PPRDIR/../../rtl/soc_sram_lite_top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -219,7 +233,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="soc_lite_top"/>
+        <Option Name="TopModule" Val="soc_sram_lite_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="ElabLoadTimingContstraints" Val="0"/>
       </Config>
@@ -362,7 +376,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="inst_ram_synth_1" Type="Ft3:Synth" SrcSet="inst_ram" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.srcs/utils_1/imports/inst_ram_synth_1">
+    <Run Id="inst_ram_synth_1" Type="Ft3:Synth" SrcSet="inst_ram" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/inst_ram_synth_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
         <Step Id="synth_design"/>
@@ -422,7 +436,7 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="inst_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="inst_ram_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.srcs/utils_1/imports/inst_ram_impl_1">
+    <Run Id="inst_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="inst_ram_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/inst_ram_impl_1">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
         <Step Id="init_design"/>

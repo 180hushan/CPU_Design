@@ -23,6 +23,8 @@ module wb_stage(
     output                  ws_inst_mfc0_o,
     output      [4:0]       ws_rf_dest ,
 
+    input                   from_ms_ex ,
+
     output                  ws_eret     ,
     output                  ws_ex_o      ,
     output                  ws_ex1      ,
@@ -36,6 +38,7 @@ wire        ws_ready_go;
 
 reg [`MS_TO_WS_BUS_WD -1:0] ms_to_ws_bus_r;
 wire        ws_gr_we;
+wire [ 3:0] ws_gr_strb;
 wire [ 4:0] ws_dest;
 wire [31:0] ws_final_result;
 wire [31:0] ws_pc;
@@ -51,26 +54,28 @@ wire                ws_inst_mfc0   ;
 wire                ws_inst_mtc0   ;
 
 assign {
-        ws_excode       ,   //120:116
-        ws_badvaddr     ,   //115:84
-        cp0_addr        ,   //83:76
-        ws_ex           ,   //75:75
-        ws_bd           ,   //74:74
-        ws_inst_eret    ,   //73:73
-        ws_inst_syscall ,   //72:72
-        ws_inst_mfc0    ,   //71:71
-        ws_inst_mtc0    ,   //70:70
-        // ws_rt_value    ,    //101:70
-        ws_gr_we       ,  //69:69
+        ws_excode       ,   //123:119
+        ws_badvaddr     ,   //118:87
+        cp0_addr        ,   //86:79
+        ws_ex          ,   //78:78
+        ws_bd           ,   //77:77
+        ws_inst_eret    ,   //76:76
+        ws_inst_syscall ,   //75:75
+        ws_inst_mfc0    ,   //74:74
+        ws_inst_mtc0    ,   //73:73
+        // ws_rt_value    ,  //101:70
+        ws_gr_strb       ,  //72:69
         ws_dest        ,  //68:64
         ws_final_result,  //63:32
         ws_pc             //31:0
        } = ms_to_ws_bus_r;
 
-wire        rf_we;
+// assign  ws_ex = from_ms_ex ;
+
+wire [ 3:0] rf_we;
 wire [4 :0] rf_waddr;
 wire [31:0] rf_wdata;
-assign ws_to_rf_bus = {rf_we   ,  //37:37
+assign ws_to_rf_bus = {rf_we   ,  //40:37
                        rf_waddr,  //36:32
                        rf_wdata   //31:0
                       };
@@ -90,7 +95,7 @@ always @(posedge clk) begin
     end
 end
 
-assign rf_we    = ws_gr_we && ws_valid && ~ws_ex ;
+assign rf_we    = ws_gr_strb && {4{ws_valid && ~ws_ex}} ;
 assign rf_waddr = ws_dest;
 assign rf_wdata = ws_inst_mfc0 ? cp0_rdata :
                         ws_final_result ;
@@ -127,11 +132,11 @@ assign cp0_status = {32{ws_valid}} & ws_cp0_status ;
 
 // debug info generate
 assign debug_wb_pc       = ws_pc;
-assign debug_wb_rf_wen   = {4{rf_we}};
+assign debug_wb_rf_wen   = rf_we;
 assign debug_wb_rf_wnum  = ws_dest;
 assign debug_wb_rf_wdata = rf_wdata ;
 
-assign  wb_dest = ws_dest & {5{ws_valid}} & {5{ws_gr_we}} ;
+assign  wb_dest = ws_dest & {5{ws_valid}} & {5{ws_gr_strb != 4'b0000}} ;
 assign  WB_result = ws_final_result ;
 
 cp0_reg u_cp0_reg(

@@ -56,8 +56,7 @@ wire [31:0] ds_pc  ;
 
 wire        fs_to_ds_ex ;
 assign {
-        fs_to_ds_ex ,   //97:97
-        ds_bd ,         //96:96
+        fs_to_ds_ex ,   //96:96
         ds_badvaddr ,   //95:64
         ds_inst,        //63:32
         ds_pc           //31:0
@@ -82,13 +81,20 @@ assign {rf_we   ,  //37:37
 //     es_blk_valid    // 0:0
 // } = es_fwd_blk_bus;
 
+wire        br_leaving_ds ;
 wire        br_stall ;
 wire        load_stall ;
+wire    [31:0]      bd_pc   ;
 
-assign  br_stall = br_taken & load_stall & ds_valid ;
+assign  br_stall = (load_stall | branch_stall) & ds_valid ;
+// assign  br_stall = br_taken & load_stall & ds_valid ;
 // assign  br_stall = 1'b0 ;
 assign  load_stall = (rs_wait & (rs==EXE_dest) & es_load_op & !ws_ex & !ws_eret) ||
                         (rt_wait & (rt==EXE_dest) & es_load_op & !ws_ex & !ws_eret) ;
+
+wire    branch_stall ;
+
+assign  branch_stall = ds_is_branch & (rs_wait || rt_wait) & ds_valid  ;
 
 assign ds_is_branch = (inst_beq || inst_bne || inst_jal || inst_jr ||
                        inst_bgez || inst_bgtz || inst_blez || inst_bltz ||
@@ -207,7 +213,7 @@ wire [31:0] rf_rdata2;
 
 wire        rs_eq_rt;   //源操作数1 = 源操作数2情况 ，用于判断操作数相等时的跳转
 
-assign br_bus       = {br_stall,br_taken,br_target};
+assign br_bus       = {br_leaving_ds ,br_stall,br_taken,br_target};
 
 wire    [4:0]       ds_excode ;
 wire                ds_ex ;
@@ -227,7 +233,7 @@ assign ds_to_es_bus = {
                        ds_badvaddr  ,   //202:171
                        cp0_addr     ,   //170:163
                        ds_ex        ,   //162:162
-                       ds_bd        ,   //161:161
+                       ds_is_bd     ,   //161:161
                        inst_eret    ,   //160:160
                        inst_syscall ,   //159:159 
                        inst_mfc0    ,   //158:158
@@ -484,6 +490,10 @@ assign  rsbgtz = (rs_value[31] == 1'b0 ) && (rs_value != 32'd0) ;
 assign  rsblez = (rs_value[31] == 1'b1 ) || (rs_value == 32'd0) ;
 assign  rsbltz = (rs_value[31] == 1'b1 ) && (rs_value != 32'd0) ;
 
+assign br_leaving_ds = br_taken & ds_ready_go & es_allowin ;
+
+assign  bd_pc   =   ds_pc + 32'h4 ;
+
 assign br_taken = (   inst_beq      &&  rs_eq_rt
                    || inst_bne      && !rs_eq_rt
                    || inst_bgez     && rsbgez
@@ -497,9 +507,26 @@ assign br_taken = (   inst_beq      &&  rs_eq_rt
                    || inst_jal
                    || inst_jr
                   ) && ds_valid;
-assign br_target = (inst_beq || inst_bne || inst_bgez || inst_bgtz || inst_blez || inst_bltz || inst_bgezal || inst_bltzal) ? (fs_pc + {{14{imm[15]}}, imm[15:0], 2'b0}) :
+assign br_target = (inst_beq || inst_bne || inst_bgez || inst_bgtz || inst_blez || inst_bltz || inst_bgezal || inst_bltzal) ? (bd_pc + {{14{imm[15]}}, imm[15:0], 2'b0}) :
                    (inst_jr || inst_jalr)              ? rs_value :
-                  /*inst_jal*/              {fs_pc[31:28], jidx[25:0], 2'b0};
+                  /*inst_jal*/              {bd_pc[31:28], jidx[25:0], 2'b0};
+
+wire    ds_is_bd ;
+reg     ds_is_bd_r ;
+
+assign  ds_is_bd = ds_is_bd_r & ds_valid ;
+
+always @(posedge clk ) begin
+    if(reset) begin
+        ds_is_bd_r  <=  1'b0 ;
+    end
+    else if(ws_eret || ws_ex) begin
+        ds_is_bd_r  <=  1'b0 ;
+    end
+    else if(ds_to_es_valid && es_allowin) begin
+        ds_is_bd_r  <=  ds_is_branch ;
+    end
+end
 
 wire        interrupt ;
 assign      interrupt = ((cp0_cause[15:8] & cp0_status[15:8]) != 8'b0) && (cp0_status[1:0] == 2'b01) ;
