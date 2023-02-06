@@ -23,6 +23,9 @@ module id_stage(
 
     input       es_load_op,
 
+    //from ms
+    input       ms_waiting_data     ,
+
     input       [31:0]          EXE_result,
     input       [31:0]          MEM_result,
     input       [31:0]          WB_result,
@@ -89,8 +92,8 @@ wire    [31:0]      bd_pc   ;
 assign  br_stall = (load_stall | branch_stall) & ds_valid ;
 // assign  br_stall = br_taken & load_stall & ds_valid ;
 // assign  br_stall = 1'b0 ;
-assign  load_stall = (rs_wait & (rs==EXE_dest) & es_load_op & !ws_ex & !ws_eret) ||
-                        (rt_wait & (rt==EXE_dest) & es_load_op & !ws_ex & !ws_eret) ;
+assign  load_stall = (rs_wait & (((rs==EXE_dest) & es_load_op & !ws_ex & !ws_eret) | ((rs==MEM_dest) & ms_waiting_data))) ||
+                        (rt_wait & (((rt==EXE_dest) & es_load_op & !ws_ex & !ws_eret) | ((rt==MEM_dest) & ms_waiting_data)))  ;
 
 wire    branch_stall ;
 

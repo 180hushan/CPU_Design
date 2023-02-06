@@ -44,20 +44,20 @@
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/../../../../../proj_7_2/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.ip_user_files/ipstatic"/>
     <Option Name="UseIPStaticLibs" Val="0"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="217"/>
+    <Option Name="WTXSimLaunchSim" Val="225"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="33"/>
-    <Option Name="WTModelSimExportSim" Val="33"/>
-    <Option Name="WTQuestaExportSim" Val="33"/>
-    <Option Name="WTIesExportSim" Val="33"/>
-    <Option Name="WTVcsExportSim" Val="33"/>
-    <Option Name="WTRivieraExportSim" Val="33"/>
-    <Option Name="WTActivehdlExportSim" Val="33"/>
+    <Option Name="WTXSimExportSim" Val="38"/>
+    <Option Name="WTModelSimExportSim" Val="38"/>
+    <Option Name="WTQuestaExportSim" Val="38"/>
+    <Option Name="WTIesExportSim" Val="38"/>
+    <Option Name="WTVcsExportSim" Val="38"/>
+    <Option Name="WTRivieraExportSim" Val="38"/>
+    <Option Name="WTActivehdlExportSim" Val="38"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -118,7 +118,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/BRIDGE/bridge_1x2.v">
+      <File Path="$PPRDIR/../../rtl/axi_wrap/axi_wrap.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../rtl/ram_wrap/axi_wrap_ram.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -153,6 +160,13 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../rtl/myCPU/mycpu_core.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/../../rtl/myCPU/mycpu_top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -174,13 +188,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/ram_wrap/sram_wrap.v">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../rtl/myCPU/tools.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -188,40 +195,17 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../rtl/soc_sram_lite_top.v">
+      <File Path="$PPRDIR/../../rtl/myCPU/transfer_bridge.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../../../soft/func_lab3/obj/inst_ram.coe">
+      <File Path="$PPRDIR/../../rtl/soc_axi_lite_top.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../soft/func_lab4/obj/inst_ram.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../soft/func_lab6/obj/inst_ram.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../soft/func_lab7/obj/inst_ram.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../soft/func_lab8/obj/inst_ram.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -233,7 +217,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="soc_sram_lite_top"/>
+        <Option Name="TopModule" Val="soc_axi_lite_top"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="ElabLoadTimingContstraints" Val="0"/>
       </Config>
@@ -301,8 +285,8 @@
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="data_ram" Type="BlockSrcs" RelSrcDir="$PSRCDIR/data_ram">
-      <File Path="$PPRDIR/../../rtl/xilinx_ip/data_ram/data_ram.xci">
+    <FileSet Name="axi_ram" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_ram">
+      <File Path="$PPRDIR/../../rtl/xilinx_ip/axi_ram/axi_ram.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -310,13 +294,13 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="data_ram"/>
+        <Option Name="TopModule" Val="axi_ram"/>
         <Option Name="ElabLoadTimingContstraints" Val="0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
-    <FileSet Name="inst_ram" Type="BlockSrcs" RelSrcDir="$PSRCDIR/inst_ram">
-      <File Path="$PPRDIR/../../rtl/xilinx_ip/inst_ram/inst_ram.xci">
+    <FileSet Name="axi_crossbar_1x2" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axi_crossbar_1x2">
+      <File Path="$PPRDIR/../../rtl/xilinx_ip/axi_crossbar_1x2/axi_crossbar_1x2.xci">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -324,7 +308,7 @@
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TopModule" Val="inst_ram"/>
+        <Option Name="TopModule" Val="axi_crossbar_1x2"/>
         <Option Name="ElabLoadTimingContstraints" Val="0"/>
         <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
@@ -367,18 +351,22 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="data_ram_synth_1" Type="Ft3:Synth" SrcSet="data_ram" Part="xc7a200tfbg676-2" ConstrsSet="data_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PPRDIR/../../../../../../lab_project/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.srcs/utils_1/imports/data_ram_synth_1">
+    <Run Id="axi_ram_synth_1" Type="Ft3:Synth" SrcSet="axi_ram" Part="xc7a200tfbg676-2" ConstrsSet="axi_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axi_ram_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="inst_ram_synth_1" Type="Ft3:Synth" SrcSet="inst_ram" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/inst_ram_synth_1">
+    <Run Id="axi_crossbar_1x2_synth_1" Type="Ft3:Synth" SrcSet="axi_crossbar_1x2" Part="xc7a200tfbg676-2" ConstrsSet="axi_crossbar_1x2" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" IncludeInArchive="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axi_crossbar_1x2_synth_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2020">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <ReportStrategy Name="Vivado Synthesis Default Reports" Flow="Vivado Synthesis 2020"/>
@@ -419,9 +407,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="data_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="data_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="data_ram_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PPRDIR/../../../../../../lab_project/CPU_CDE/mycpu_verify/run_vivado/mycpu_prj1/mycpu_prj1.srcs/utils_1/imports/data_ram_impl_1">
+    <Run Id="axi_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="axi_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="axi_ram_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axi_ram_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -436,9 +426,11 @@
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
       <RQSFiles/>
     </Run>
-    <Run Id="inst_ram_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="inst_ram" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="inst_ram_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/inst_ram_impl_1">
+    <Run Id="axi_crossbar_1x2_impl_1" Type="Ft2:EntireDesign" Part="xc7a200tfbg676-2" ConstrsSet="axi_crossbar_1x2" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" SynthRun="axi_crossbar_1x2_synth_1" IncludeInArchive="false" GenFullBitstream="true" AutoIncrementalDir="$PSRCDIR/utils_1/imports/axi_crossbar_1x2_impl_1">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2020">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

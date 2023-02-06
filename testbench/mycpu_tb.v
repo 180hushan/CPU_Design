@@ -66,7 +66,7 @@ begin
     resetn = 1'b1;
 end
 always #5 clk=~clk;
-soc_sram_lite_top #(.SIMULATION(1'b1)) soc_lite
+soc_axi_lite_top #(.SIMULATION(1'b1)) soc_lite
 (
        .resetn      (resetn     ), 
        .clk         (clk        ),
